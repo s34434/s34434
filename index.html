@@ -3,13 +3,11 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ปกรณ์เกียรติ | Portfolio</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -18,7 +16,6 @@
 
     body {
       min-height: 100vh;
-
       font-family: "Segoe UI", Tahoma, sans-serif;
 
       background:
@@ -35,12 +32,11 @@
       padding: 30px;
     }
 
-    /* กล่องหลัก */
     .card {
       width: 100%;
       max-width: 650px;
 
-      padding: 50px 40px;
+      padding: 45px 40px;
 
       text-align: center;
 
@@ -52,40 +48,30 @@
 
       backdrop-filter: blur(15px);
 
-      box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 
       animation: fadeIn 1s ease;
     }
 
-    /* ไอคอน */
-    .icon {
-      width: 90px;
-      height: 90px;
+    /* รูปโปรไฟล์ */
+    .profile-image {
+      width: 160px;
+      height: 160px;
 
-      margin: 0 auto 25px;
+      object-fit: cover;
 
       border-radius: 50%;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      border: 4px solid #a855f7;
 
-      font-size: 40px;
+      box-shadow:
+        0 0 30px rgba(168, 85, 247, 0.5);
 
-      background: linear-gradient(
-        135deg,
-        #8e2de2,
-        #4a00e0
-      );
-
-      box-shadow: 0 10px 30px rgba(142, 45, 226, 0.4);
+      margin-bottom: 25px;
     }
 
-    /* หัวข้อ */
     h1 {
       font-size: 38px;
-
       margin-bottom: 15px;
 
       background: linear-gradient(
@@ -98,6 +84,21 @@
       -webkit-text-fill-color: transparent;
     }
 
+    .line {
+      width: 60px;
+      height: 3px;
+
+      margin: 20px auto;
+
+      border-radius: 10px;
+
+      background: linear-gradient(
+        90deg,
+        #8e2de2,
+        #4a00e0
+      );
+    }
+
     .name {
       color: #c084fc;
 
@@ -108,7 +109,6 @@
       margin-bottom: 20px;
     }
 
-    /* เนื้อหา */
     p {
       font-size: 17px;
 
@@ -120,12 +120,10 @@
     }
 
     .highlight {
-      color: #a855f7;
-
+      color: #c084fc;
       font-weight: bold;
     }
 
-    /* ปุ่ม */
     .btn {
       display: inline-block;
 
@@ -152,12 +150,9 @@
       box-shadow:
         0 8px 25px rgba(74, 0, 224, 0.4);
 
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+      transition: 0.3s;
     }
 
-    /* ตอนเอาเมาส์ไปชี้ */
     .btn:hover {
       transform: translateY(-4px);
 
@@ -165,25 +160,7 @@
         0 12px 35px rgba(142, 45, 226, 0.6);
     }
 
-    /* เส้น */
-    .line {
-      width: 60px;
-      height: 3px;
-
-      margin: 25px auto;
-
-      border-radius: 10px;
-
-      background: linear-gradient(
-        90deg,
-        #8e2de2,
-        #4a00e0
-      );
-    }
-
-    /* Animation */
     @keyframes fadeIn {
-
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -193,18 +170,11 @@
         opacity: 1;
         transform: translateY(0);
       }
-
     }
 
-    /* มือถือ */
     @media (max-width: 600px) {
-
-      body {
-        padding: 20px;
-      }
-
       .card {
-        padding: 40px 25px;
+        padding: 35px 25px;
       }
 
       h1 {
@@ -219,8 +189,11 @@
         font-size: 16px;
       }
 
+      .profile-image {
+        width: 130px;
+        height: 130px;
+      }
     }
-
   </style>
 
 </head>
@@ -230,9 +203,12 @@
   <div class="card">
 
 ```
-<div class="icon">
-  💻
-</div>
+<!-- รูปโปรไฟล์ -->
+<img
+  src="profile.jpg"
+  alt="รูปโปรไฟล์ของปกรณ์เกียรติ"
+  class="profile-image"
+>
 
 <h1>ยินดีต้อนรับ</h1>
 
@@ -243,8 +219,7 @@
 </div>
 
 <p>
-  สวัสดีครับ! ผมเป็นนักศึกษาที่มีความสนใจ
-  ในด้าน
+  สวัสดีครับ! ผมเป็นนักศึกษาที่มีความสนใจในด้าน
   <span class="highlight">
     Computer Science & Engineering
   </span>
@@ -256,12 +231,12 @@
 </p>
 
 <p>
-  🚀 นี่คือเว็บไซต์ Portfolio แรกของผม
+  เว็บไซต์ Portfolio แรกของผม
   ที่สร้างและโฮสต์ด้วย GitHub Pages
 </p>
 
 <a href="portfolio.html" class="btn">
-  🚀 ดูแฟ้มผลงาน
+  ดูแฟ้มผลงาน
 </a>
 ```
 
