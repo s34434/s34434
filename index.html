@@ -1,246 +1,150 @@
 <!DOCTYPE html>
-
 <html lang="th">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ปกรณ์เกียรติ | Portfolio</title>
+  <title>PAKORNKIAD | Portfolio</title>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      min-height: 100vh;
-      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #ffffff;
+      color: #222;
+    }
 
-      background:
-        radial-gradient(circle at top left, #3b1b70, transparent 40%),
-        radial-gradient(circle at bottom right, #0f4c75, transparent 40%),
-        #080817;
-
-      color: white;
-
+    nav {
+      height: 70px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-
-      padding: 30px;
+      padding: 0 8%;
+      border-bottom: 1px solid #eee;
     }
 
-    .card {
-      width: 100%;
-      max-width: 650px;
-
-      padding: 45px 40px;
-
-      text-align: center;
-
-      background: rgba(255, 255, 255, 0.08);
-
-      border: 1px solid rgba(255, 255, 255, 0.15);
-
-      border-radius: 25px;
-
-      backdrop-filter: blur(15px);
-
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-
-      animation: fadeIn 1s ease;
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
     }
 
-    /* รูปโปรไฟล์ */
-    .profile-image {
-      width: 160px;
-      height: 160px;
+    .logo span {
+      color: #007bff;
+    }
 
-      object-fit: cover;
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+    }
 
-      border-radius: 50%;
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8%;
+      gap: 50px;
+    }
 
-      border: 4px solid #a855f7;
+    .text {
+      max-width: 600px;
+    }
 
-      box-shadow:
-        0 0 30px rgba(168, 85, 247, 0.5);
-
-      margin-bottom: 25px;
+    .text small {
+      color: #007bff;
+      font-size: 18px;
     }
 
     h1 {
-      font-size: 38px;
-      margin-bottom: 15px;
-
-      background: linear-gradient(
-        90deg,
-        #ffffff,
-        #c084fc
-      );
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 60px;
+      margin: 15px 0;
     }
 
-    .line {
-      width: 60px;
-      height: 3px;
-
-      margin: 20px auto;
-
-      border-radius: 10px;
-
-      background: linear-gradient(
-        90deg,
-        #8e2de2,
-        #4a00e0
-      );
+    h1 span {
+      color: #007bff;
     }
 
-    .name {
-      color: #c084fc;
-
-      font-size: 23px;
-
-      font-weight: bold;
-
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 17px;
-
+    .text p {
+      color: #666;
+      font-size: 19px;
       line-height: 1.8;
-
-      color: #d1d5db;
-
-      margin-bottom: 10px;
-    }
-
-    .highlight {
-      color: #c084fc;
-      font-weight: bold;
+      margin-bottom: 30px;
     }
 
     .btn {
       display: inline-block;
-
-      margin-top: 30px;
-
-      padding: 14px 30px;
-
+      background: #007bff;
       color: white;
-
+      padding: 15px 30px;
+      border-radius: 8px;
       text-decoration: none;
-
-      font-size: 16px;
-
-      font-weight: bold;
-
-      border-radius: 50px;
-
-      background: linear-gradient(
-        135deg,
-        #8e2de2,
-        #4a00e0
-      );
-
-      box-shadow:
-        0 8px 25px rgba(74, 0, 224, 0.4);
-
-      transition: 0.3s;
     }
 
-    .btn:hover {
-      transform: translateY(-4px);
-
-      box-shadow:
-        0 12px 35px rgba(142, 45, 226, 0.6);
+    .photo img {
+      width: 330px;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 20px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .card {
-        padding: 35px 25px;
-      }
-
-      h1 {
-        font-size: 30px;
-      }
-
-      .name {
-        font-size: 20px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-
-      .profile-image {
-        width: 130px;
-        height: 130px;
-      }
-    }
   </style>
 
 </head>
 
 <body>
 
-  <div class="card">
+  <nav>
 
-```
-<!-- รูปโปรไฟล์ -->
-<img
-  src="profile.jpg"
-  alt="รูปโปรไฟล์ของปกรณ์เกียรติ"
-  class="profile-image"
->
+    <div class="logo">
+      PAKORN<span>KIAD</span>
+    </div>
 
-<h1>ยินดีต้อนรับ</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+    </div>
 
-<div class="line"></div>
+  </nav>
 
-<div class="name">
-  ปกรณ์เกียรติ วงค์กระโซ่
-</div>
+  <section class="hero">
 
-<p>
-  สวัสดีครับ! ผมเป็นนักศึกษาที่มีความสนใจในด้าน
-  <span class="highlight">
-    Computer Science & Engineering
-  </span>
-</p>
+    <div class="text">
 
-<p>
-  ผมกำลังเรียนรู้และพัฒนาทักษะด้านการเขียนโปรแกรม
-  เทคโนโลยี และการสร้างสรรค์โปรเจกต์ต่าง ๆ
-</p>
+      <small>WELCOME TO MY PORTFOLIO</small>
 
-<p>
-  เว็บไซต์ Portfolio แรกของผม
-  ที่สร้างและโฮสต์ด้วย GitHub Pages
-</p>
+      <h1>
+        Hi, I'm <span>PAKORNKIAD</span>
+      </h1>
 
-<a href="portfolio.html" class="btn">
-  ดูแฟ้มผลงาน
-</a>
-```
+      <p>
+        สวัสดีครับ ผมเป็นคนที่สนใจด้านเทคโนโลยี
+        การเขียนโปรแกรม และการออกแบบเว็บไซต์
+        เว็บไซต์นี้รวบรวมประวัติและผลงานของผม
+      </p>
 
-  </div>
+      <a href="portfolio.html" class="btn">
+        ดูผลงานของฉัน →
+      </a>
+
+    </div>
+
+    <div class="photo">
+
+      <img src="profile.jpg">
+
+    </div>
+
+  </section>
 
 </body>
+
 </html>
