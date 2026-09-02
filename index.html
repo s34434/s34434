@@ -1,35 +1,271 @@
 <!DOCTYPE html>
+
 <html lang="th">
-  <head>
-    <meta charset="UTF-8">
-    <title>หน้าแนะนำตัวของฉัน</title>
-    <style>
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ปกรณ์เกียรติ | Portfolio</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family: "Segoe UI", Tahoma, sans-serif;
+
+      background:
+        radial-gradient(circle at top left, #3b1b70, transparent 40%),
+        radial-gradient(circle at bottom right, #0f4c75, transparent 40%),
+        #080817;
+
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+    }
+
+    /* กล่องหลัก */
+    .card {
+      width: 100%;
+      max-width: 650px;
+
+      padding: 50px 40px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.08);
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+
+      border-radius: 25px;
+
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+
+      animation: fadeIn 1s ease;
+    }
+
+    /* ไอคอน */
+    .icon {
+      width: 90px;
+      height: 90px;
+
+      margin: 0 auto 25px;
+
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 40px;
+
+      background: linear-gradient(
+        135deg,
+        #8e2de2,
+        #4a00e0
+      );
+
+      box-shadow: 0 10px 30px rgba(142, 45, 226, 0.4);
+    }
+
+    /* หัวข้อ */
+    h1 {
+      font-size: 38px;
+
+      margin-bottom: 15px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c084fc
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .name {
+      color: #c084fc;
+
+      font-size: 23px;
+
+      font-weight: bold;
+
+      margin-bottom: 20px;
+    }
+
+    /* เนื้อหา */
+    p {
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      color: #d1d5db;
+
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #a855f7;
+
+      font-weight: bold;
+    }
+
+    /* ปุ่ม */
+    .btn {
+      display: inline-block;
+
+      margin-top: 30px;
+
+      padding: 14px 30px;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 16px;
+
+      font-weight: bold;
+
+      border-radius: 50px;
+
+      background: linear-gradient(
+        135deg,
+        #8e2de2,
+        #4a00e0
+      );
+
+      box-shadow:
+        0 8px 25px rgba(74, 0, 224, 0.4);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    /* ตอนเอาเมาส์ไปชี้ */
+    .btn:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 12px 35px rgba(142, 45, 226, 0.6);
+    }
+
+    /* เส้น */
+    .line {
+      width: 60px;
+      height: 3px;
+
+      margin: 25px auto;
+
+      border-radius: 10px;
+
+      background: linear-gradient(
+        90deg,
+        #8e2de2,
+        #4a00e0
+      );
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+    /* มือถือ */
+    @media (max-width: 600px) {
+
       body {
-        background-color: #0b0845; color: black;
-        text-align: center; padding: 50px;
+        padding: 20px;
       }
+
       .card {
-        background: white; border-radius: 0px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        max-width: 500px; margin: 0 auto; padding: 30px;
+        padding: 40px 25px;
       }
-      .btn {
-        display: inline-block; background: #2c3e50; color: white; padding: 10px
-        20px; text-decoration: none; border-radius: 5px; margin-top: 20px;
+
+      h1 {
+        font-size: 30px;
       }
-      
-      h1 { color: #6b068c; }
-      p { font-size: 18px; line-height: 1.6; }
-      p1 { color: #80001c; }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-      <p>สวัสดีครับ! ผมชื่อ <p1><strong>ปกรณ์เกียรติ วงค์กระโซ่</strong></p1></p>
-      <p>ขณะนี้กำลังศึกษา/สนใจด้าน Computer Science & Engineering</p>
-      <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p>
-    <a href= "portfolio.html" class="btn"> ดูแฟ้มผลงาน</a>
-    </div>
-  </body>
+
+      .name {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+
+```
+<div class="icon">
+  💻
+</div>
+
+<h1>ยินดีต้อนรับ</h1>
+
+<div class="line"></div>
+
+<div class="name">
+  ปกรณ์เกียรติ วงค์กระโซ่
+</div>
+
+<p>
+  สวัสดีครับ! ผมเป็นนักศึกษาที่มีความสนใจ
+  ในด้าน
+  <span class="highlight">
+    Computer Science & Engineering
+  </span>
+</p>
+
+<p>
+  ผมกำลังเรียนรู้และพัฒนาทักษะด้านการเขียนโปรแกรม
+  เทคโนโลยี และการสร้างสรรค์โปรเจกต์ต่าง ๆ
+</p>
+
+<p>
+  🚀 นี่คือเว็บไซต์ Portfolio แรกของผม
+  ที่สร้างและโฮสต์ด้วย GitHub Pages
+</p>
+
+<a href="portfolio.html" class="btn">
+  🚀 ดูแฟ้มผลงาน
+</a>
+```
+
+  </div>
+
+</body>
 </html>
