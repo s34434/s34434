@@ -1,643 +1,83 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>PAKORNKIAD | Portfolio</title>
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      transition: background 0.3s, color 0.3s, border 0.3s;
-    }
-
-
-    /* =========================
-       LIGHT THEME
-    ========================= */
-
-    body {
-      background: #ffffff;
-      color: #222;
-    }
-
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    nav {
-      height: 70px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      padding: 0 8%;
-
-      border-bottom: 1px solid #eee;
-
-      background: #ffffff;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #007bff;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-
-      margin-left: 25px;
-    }
-
-    nav a:hover {
-      color: #007bff;
-    }
-
-
-    /* =========================
-       THEME BUTTON
-    ========================= */
-
-    .theme-btn {
-      border: none;
-
-      background: #222;
-      color: white;
-
-      padding: 10px 16px;
-
-      border-radius: 20px;
-
-      cursor: pointer;
-
-      font-size: 15px;
-
-      margin-left: 25px;
-    }
-
-    .theme-btn:hover {
-      transform: scale(1.05);
-    }
-
-
-    /* =========================
-       PORTFOLIO HEADER
-    ========================= */
-
-    .portfolio-header {
-      text-align: center;
-
-      padding: 70px 20px 40px;
-    }
-
-    .portfolio-header small {
-      color: #007bff;
-
-      font-size: 17px;
-
-      font-weight: bold;
-    }
-
-    .portfolio-header h1 {
-      font-size: 48px;
-
-      margin: 15px 0;
-    }
-
-    .portfolio-header h1 span {
-      color: #007bff;
-    }
-
-    .portfolio-header p {
-      color: #666;
-
-      font-size: 18px;
-
-      line-height: 1.7;
-
-      max-width: 650px;
-
-      margin: auto;
-    }
-
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .projects {
-
-      max-width: 1100px;
-
-      margin: auto;
-
-      padding: 20px 8% 80px;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 25px;
-    }
-
-
-    /* =========================
-       PROJECT CARD
-    ========================= */
-
-    .card {
-
-      background: #fff;
-
-      border: 1px solid #eee;
-
-      border-radius: 15px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,0.06);
-
-      transition: 0.3s;
-    }
-
-    .card:hover {
-
-      transform: translateY(-8px);
-
-      box-shadow:
-        0 15px 30px rgba(0,0,0,0.12);
-    }
-
-
-    /* รูปผลงาน */
-
-    .card-image {
-
-      width: 100%;
-      height: 200px;
-
-      object-fit: cover;
-
-      display: block;
-    }
-
-
-    .card-content {
-
-      padding: 25px;
-    }
-
-    .card-content h2 {
-
-      font-size: 23px;
-
-      margin-bottom: 10px;
-    }
-
-    .card-content p {
-
-      color: #666;
-
-      line-height: 1.7;
-
-      margin-bottom: 20px;
-    }
-
-
-    /* =========================
-       PROJECT BUTTON
-    ========================= */
-
-    .project-btn {
-
-      display: inline-block;
-
-      padding: 10px 20px;
-
-      background: #007bff;
-
-      color: white;
-
-      text-decoration: none;
-
-      border-radius: 7px;
-
-      font-size: 15px;
-    }
-
-    .project-btn:hover {
-
-      background: #0056b3;
-    }
-
-
-    /* =========================
-       BACK HOME
-    ========================= */
-
-    .back-home {
-
-      text-align: center;
-
-      padding-bottom: 70px;
-    }
-
-    .back-btn {
-
-      display: inline-block;
-
-      padding: 13px 28px;
-
-      border: 2px solid #007bff;
-
-      color: #007bff;
-
-      text-decoration: none;
-
-      border-radius: 8px;
-    }
-
-    .back-btn:hover {
-
-      background: #007bff;
-
-      color: white;
-    }
-
-
-    /* =========================
-       DARK THEME
-    ========================= */
-
-    body.dark {
-
-      background: #111;
-
-      color: #fff;
-    }
-
-
-    body.dark nav {
-
-      background: #111;
-
-      border-bottom:
-        1px solid #333;
-    }
-
-
-    body.dark nav a {
-
-      color: #ddd;
-    }
-
-
-    body.dark nav a:hover {
-
-      color: #007bff;
-    }
-
-
-    body.dark .portfolio-header p {
-
-      color: #aaa;
-    }
-
-
-    body.dark .card {
-
-      background: #1b1b1b;
-
-      border:
-        1px solid #333;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,0.3);
-    }
-
-
-    body.dark .card-content p {
-
-      color: #aaa;
-    }
-
-
-    body.dark .theme-btn {
-
-      background: #fff;
-
-      color: #111;
-    }
-
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .projects {
-
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-header h1 {
-
-        font-size: 38px;
-      }
-
-      nav {
-
-        padding: 0 5%;
-      }
-
-      nav a {
-
-        margin-left: 10px;
-      }
-
-    }
-
-
-  </style>
-
+  <title>Nicol Rider - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-
-  <!-- =========================
-       NAVBAR
-  ========================= -->
-
-  <nav>
-
-    <div class="logo">
-
-      PAKORN<span>KIAD</span>
-
-    </div>
-
-
-    <div>
-
-      <a href="index.html">
-        Home
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-dot"></div>
+        Nicol Rider <span>Editor</span>
       </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      </ul>
+    </nav>
 
-      <a href="portfolio.html">
-        Portfolio
-      </a>
+    <section>
+      <h2 class="section-title">Portfolio</h2>
 
-      <button
-        class="theme-btn"
-        onclick="changeTheme()"
-        id="themeButton">
-
-        🌙 Dark
-
-      </button>
-
-    </div>
-
-  </nav>
-
-
-  <!-- =========================
-       HEADER
-  ========================= -->
-
-  <section class="portfolio-header">
-
-    <small>
-      MY PORTFOLIO
-    </small>
-
-    <h1>
-      ผลงานของ <span>PAKORNKIAD</span>
-    </h1>
-
-    <p>
-      รวมผลงานและโปรเจกต์ต่าง ๆ
-      ที่ผมได้สร้างขึ้นจากความสนใจ
-      ด้านเทคโนโลยี การเขียนโปรแกรม
-      และการออกแบบเว็บไซต์
-    </p>
-
-  </section>
-
-
-  <!-- =========================
-       PROJECTS
-  ========================= -->
-
-  <section class="projects">
-
-
-    <!-- PROJECT 1 -->
-
-    <div class="card">
-
-      <img
-        src="project1.jpg"
-        class="card-image"
-        alt="Project 1">
-
-      <div class="card-content">
-
-        <h2>
-          เว็บไซต์ Portfolio
-        </h2>
-
-        <p>
-          เว็บไซต์แนะนำตัวและรวบรวมผลงาน
-          สร้างด้วย HTML และ CSS
-          พร้อมระบบเปลี่ยนธีม Dark / Light
-        </p>
-
-        <a
-          href="#"
-          class="project-btn">
-
-          ดูผลงาน →
-
-        </a>
-
+      <!-- Project 01 -->
+      <div class="portfolio-item">
+        <div class="portfolio-info">
+          <h3>Portfolio Name 01</h3>
+          <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add your own content and make changes to the font.</p>
+        </div>
+        <div class="portfolio-img">
+          <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" alt="Portfolio 01">
+        </div>
       </div>
 
-    </div>
-
-
-    <!-- PROJECT 2 -->
-
-    <div class="card">
-
-      <img
-        src="project2.jpg"
-        class="card-image"
-        alt="Project 2">
-
-      <div class="card-content">
-
-        <h2>
-          Web Design
-        </h2>
-
-        <p>
-          โปรเจกต์ออกแบบเว็บไซต์
-          เน้นความเรียบง่าย ทันสมัย
-          และรองรับการใช้งานบนมือถือ
-        </p>
-
-        <a
-          href="#"
-          class="project-btn">
-
-          ดูผลงาน →
-
-        </a>
-
+      <!-- Project 02 -->
+      <div class="portfolio-item">
+        <div class="portfolio-info">
+          <h3>Portfolio Name 02</h3>
+          <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add your own content and make changes to the font.</p>
+        </div>
+        <div class="portfolio-img">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=600" alt="Portfolio 02">
+        </div>
       </div>
 
-    </div>
-
-
-    <!-- PROJECT 3 -->
-
-    <div class="card">
-
-      <img
-        src="project3.jpg"
-        class="card-image"
-        alt="Project 3">
-
-      <div class="card-content">
-
-        <h2>
-          Project ของฉัน
-        </h2>
-
-        <p>
-          โปรเจกต์ที่สร้างขึ้นเพื่อฝึกฝน
-          ทักษะด้านการเขียนโปรแกรม
-          และพัฒนาความสามารถของตัวเอง
-        </p>
-
-        <a
-          href="#"
-          class="project-btn">
-
-          ดูผลงาน →
-
-        </a>
-
+      <!-- Project 03 -->
+      <div class="portfolio-item">
+        <div class="portfolio-info">
+          <h3>Portfolio Name 03</h3>
+          <p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click "Edit Text" or double click me to add your own content and make changes to the font.</p>
+        </div>
+        <div class="portfolio-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="Portfolio 03">
+        </div>
       </div>
+    </section>
 
-    </div>
-
-
-  </section>
-
-
-  <!-- =========================
-       BACK HOME
-  ========================= -->
-
-  <div class="back-home">
-
-    <a
-      href="index.html"
-      class="back-btn">
-
-      ← กลับหน้าแรก
-
-    </a>
-
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Phone</h4>
+          <p>123-456-7890</p>
+        </div>
+        <div class="footer-col">
+          <h4>Email</h4>
+          <p>info@mysite.com</p>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Me</h4>
+          <p><a href="#">LinkedIn</a> | <a href="#">Twitter</a></p>
+        </div>
+        <div class="footer-col">
+          <p>© 2026 By Nicol Rider<br>Powered and secured by GitHub Pages</p>
+        </div>
+      </div>
+    </footer>
   </div>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    function changeTheme() {
-
-      document.body.classList.toggle("dark");
-
-      const button =
-        document.getElementById("themeButton");
-
-
-      if (
-        document.body.classList.contains("dark")
-      ) {
-
-        button.innerHTML = "☀️ Light";
-
-        localStorage.setItem(
-          "theme",
-          "dark"
-        );
-
-      } else {
-
-        button.innerHTML = "🌙 Dark";
-
-        localStorage.setItem(
-          "theme",
-          "light"
-        );
-
-      }
-
-    }
-
-
-    /* =========================
-       LOAD SAVED THEME
-    ========================= */
-
-    window.onload = function() {
-
-      const savedTheme =
-        localStorage.getItem("theme");
-
-      const button =
-        document.getElementById("themeButton");
-
-
-      if (savedTheme === "dark") {
-
-        document.body.classList.add("dark");
-
-        button.innerHTML = "☀️ Light";
-
-      }
-
-    };
-
-  </script>
-
-
 </body>
-
 </html>
