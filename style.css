@@ -202,22 +202,27 @@ section {
 
 .portfolio-img {
   width: 100%;
-  height: auto; /* ขยายความสูงตามขนาดรูปภาพจริง */
-  overflow: hidden;
+  background-color: #f9fa0f2; /* สีพื้นหลังช่วยขับให้รูปโดดเด่น */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 20px; /* เว้นระยะรอบรูป */
   border-bottom: 1px solid #eee;
 }
 
 .portfolio-img img {
-  width: 100%;
-  height: auto; /* แสดงรูปเต็มสัดส่วนจริง */
-  display: block; /* ลบช่องว่างขอบล่างของแท็ก img */
+  max-width: 70%; /* ปรับลดขนาดความกว้างภาพ (ปรับเป็น 60% - 80% ตามชอบได้ครับ) */
+  max-height: 380px; /* จำกัดความสูงไม่ให้รูปยืดสูงเกินไป */
+  width: auto;
+  height: auto;
+  border-radius: 8px; /* ความโค้งมนของขอบรูป */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* เงาบางๆ ให้รูปดูลอยนวล */
   transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-img img {
-  transform: scale(1.02);
+  transform: scale(1.03); /* เอฟเฟกต์ขยายเล็กน้อยตอน hover */
 }
-
 .portfolio-info {
   padding: 24px;
   display: flex;
