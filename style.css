@@ -270,18 +270,15 @@ footer {
 
 .portfolio-img {
   width: 100%;
-  height: 220px;
-  overflow: hidden;
+  height: auto;
   border-bottom: 1px solid #eee;
 }
 
 .portfolio-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  height: auto;
+  display: block;
 }
-
 .portfolio-item:hover .portfolio-img img {
   transform: scale(1.05);
 }
