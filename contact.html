@@ -24,25 +24,49 @@
 
     <main class="contact-wrapper">
       <div class="contact-card-sheet">
-        <h2 class="section-title" style="margin-bottom: 10px;">GET IN TOUCH 🚀</h2>
-        <p style="color: #666;">สนใจสอบถามข้อมูลเพิ่มเติม หรือติดต่อเกี่ยวกับโอกาสในการร่วมงานและโปรเจกต์ต่างๆ สามารถติดต่อผมได้ตามช่องทางด้านล่างนี้ครับ</p>
+        <h2 class="section-title" style="margin-bottom: 10px;">SEND ME A MESSAGE 📬</h2>
+        <p style="color: #666; margin-bottom: 24px;">มีข้อสงสัย ติดต่อสอบถาม หรือต้องการส่งข้อความถึงผม กรอกข้อมูลผ่านฟอร์มด้านล่างนี้ได้เลยครับ</p>
 
-        <div class="contact-grid-cool">
+        <!-- Contact Form (เชื่อมต่อ Formspree) -->
+        <form action="https://formspree.io/f/xyzyqbbb" method="POST" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">ชื่อ-นามสกุล / Name</label>
+              <input type="text" id="name" name="name" placeholder="ระบุชื่อของคุณ" required>
+            </div>
+            <div class="form-group">
+              <label for="email">อีเมล / Email</label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">หัวข้อ / Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="เรื่องที่ต้องการติดต่อ" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">ข้อความ / Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="พิมพ์ข้อความของคุณที่นี่..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">ส่งข้อความ 🚀</button>
+        </form>
+
+        <!-- ช่องทางติดต่อด่วนแบบเดิม -->
+        <div class="contact-grid-cool" style="margin-top: 40px;">
           <a href="tel:0985616468" class="cool-btn">
             <span class="label">Phone 📞</span>
             <span class="value">098-561-6468</span>
           </a>
-
           <a href="mailto:s34434@banbung.ac.th" class="cool-btn">
             <span class="label">Email ✉️</span>
             <span class="value">s34434@banbung.ac.th</span>
           </a>
-
           <a href="https://www.instagram.com/pakornkiad.w?stkn=eTB2OW9nMTAybW9l" target="_blank" rel="noopener noreferrer" class="cool-btn">
             <span class="label">Instagram 📸</span>
             <span class="value">@pakornkiad.w</span>
           </a>
-
           <a href="https://www.facebook.com/share/18WKj91gMg/" target="_blank" rel="noopener noreferrer" class="cool-btn">
             <span class="label">Facebook 🌐</span>
             <span class="value">Pakornkiad Wongkraso</span>
