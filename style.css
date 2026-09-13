@@ -243,3 +243,67 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* --- Portfolio Card Layout --- */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.portfolio-item {
+  background: #ffffff;
+  border: 2px solid #e0e0e0; /* กรอบชัดเจน */
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  border-color: #111111; /* เปลี่ยนสีกรอบตอนนำเมาส์ไปชี้ */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-img img {
+  transform: scale(1.05);
+}
+
+.portfolio-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.portfolio-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.portfolio-info p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
