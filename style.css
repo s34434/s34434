@@ -175,17 +175,17 @@ section {
   font-size: 0.95rem;
 }
 
-/* --- Portfolio Card Layout --- */
+/* --- Portfolio Card Layout (1 การ์ด/แถว + รูปขยายตามจริง) --- */
 .portfolio-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px;
+  gap: 32px;
   margin-top: 30px;
 }
 
 .portfolio-item {
   background: #ffffff;
-  border: 2px solid #e0e0e0; /* กรอบชัดเจน */
+  border: 2px solid #e0e0e0;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -196,31 +196,26 @@ section {
 
 .portfolio-item:hover {
   transform: translateY(-8px);
-  border-color: #111111; /* เปลี่ยนสีกรอบตอนนำเมาส์ไปชี้ */
+  border-color: #111111;
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-img {
   width: 100%;
-  height: 240px; /* กำหนดความสูงของพื้นที่แสดงรูป */
-  background-color: #f8f9fa; /* สีพื้นหลังช่องว่างกรณีรูปไม่เต็มสัดส่วน */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: auto; /* ขยายความสูงตามขนาดรูปภาพจริง */
   overflow: hidden;
   border-bottom: 1px solid #eee;
 }
 
 .portfolio-img img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* แสดงรูปเต็มใบ ไม่ตัดขอบ */
-  padding: 12px; /* เว้นระยะขอบรอบรูปให้ดูเป็นระเบียบ */
+  height: auto; /* แสดงรูปเต็มสัดส่วนจริง */
+  display: block; /* ลบช่องว่างขอบล่างของแท็ก img */
   transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-img img {
-  transform: scale(1.03); /* เอฟเฟกต์ขยายรูปเล็กน้อยตอนขยับเมาส์ชี้ */
+  transform: scale(1.02);
 }
 
 .portfolio-info {
