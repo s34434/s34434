@@ -286,66 +286,159 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* --- Contact Form Styles --- */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+
+/* --- Contact Popup Styling --- */
+.contact-page-bg {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.form-group input,
-.form-group textarea {
+/* พื้นหลังมืดและเบลอ (Backdrop Blur) */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 14px 16px;
-  border: 2px solid #eaeaea;
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  background-color: #fafafa;
-  transition: all 0.3s ease;
-  outline: none;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+/* กล่อง Popup เด้งขึ้นมา */
+.popup-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  
+  /* Animation เด้งขยาย */
+  animation: popupScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popupScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.popup-header .badge {
+  background: #f0f0f0;
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.popup-header h2 {
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.popup-header p {
+  font-size: 0.88rem;
+  color: #777;
+}
+
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ปุ่มการกระทำ (Action Card) */
+.contact-action-btn {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: #f9f9f9;
+  border: 1.5px solid #eee;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #111;
+  transition: all 0.25s ease;
+}
+
+.contact-action-btn:hover {
+  transform: translateX(4px) translateY(-2px);
+  background: #ffffff;
   border-color: #111;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.submit-btn {
-  background-color: #111111;
-  color: #ffffff;
-  padding: 16px 28px;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+.btn-icon {
+  font-size: 1.4rem;
+  margin-right: 14px;
+  width: 32px;
+  text-align: center;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.btn-text .title {
+  font-size: 0.95rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 8px;
+  color: #111;
 }
 
-.submit-btn:hover {
-  background-color: #e5a00d;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(229, 160, 13, 0.3);
+.btn-text .detail {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.arrow {
+  font-size: 1.1rem;
+  color: #aaa;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.contact-action-btn:hover .arrow {
+  color: #111;
+  transform: translate(2px, -2px);
+}
+
+.popup-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.back-home-btn {
+  color: #888;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.back-home-btn:hover {
+  color: #111;
 }
